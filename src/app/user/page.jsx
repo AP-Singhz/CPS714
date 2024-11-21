@@ -131,6 +131,8 @@ const Users = () => {
           : user
         )));
 
+
+        //editing a user
         setNewEmail("");
         setNewContactNumber("");
         setNewFirstName("");
@@ -165,13 +167,13 @@ const Users = () => {
               <p className="text-clr-light">Preferences: {user.preferences}</p>
               <div style={{alignContent: "center"}}>
                 <button
-                  className="edit-btn"
+                  className="edit-btn" //edit button
                   onClick={() => handleEditUser(user)}
                 >
                   Edit
                 </button>
                 <button
-                  className="delete-btn"
+                  className="delete-btn" //delete button
                   onClick={() => handleDeleteUser(user.id)}
                 >
                   Delete
@@ -190,14 +192,14 @@ const Users = () => {
           onSubmit={editingUser ? handleUpdateUser : handleAddUser}
         >
           <input
-            type="email"
+            type="email"  //email input
             placeholder="Enter email"
             value={newEmail}
             onChange={(e) => setNewEmail(e.target.value)}
             className="input-field"
           />
           <input
-            type="text"
+            type="text"  //phone number input
             placeholder="Enter contact number"
             value={newContactNumber}
             onChange={(e) => setNewContactNumber(e.target.value)}
@@ -205,28 +207,28 @@ const Users = () => {
           />
           <input
             type="text"
-            placeholder="Enter first name"
+            placeholder="Enter first name" //input first name
             value={newFirstName}
             onChange={(e) => setNewFirstName(e.target.value)}
             className="input-field"
           />
           <input
             type="text"
-            placeholder="Enter last name"
+            placeholder="Enter last name" //input last name
             value={newLastName}
             onChange={(e) => setNewLastName(e.target.value)}
             className="input-field"
           />
           <input
             type="text"
-            placeholder="Enter preferences"
+            placeholder="Enter preferences" //input preferences
             value={newPreferences}
             onChange={(e) => setNewPreferences(e.target.value)}
             className="input-field"
           />
-          <button type="submit" className="btn">
+          <button type="submit" className="btn"> 
             {editingUser ? "Update User" : "Add User"}
-          </button>
+          </button> 
         </form>
       )}
     </div>
