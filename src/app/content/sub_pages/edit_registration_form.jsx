@@ -146,52 +146,52 @@ const EditRegistrationForm = ({updateSelectedRegistration, registration}) => {
   return (
     <form onSubmit={handleUpdate} className="w-screen h-fit space-y-8 p-14 border rounded">
 
-        <div className='font-bold, text-center text-4xl'>Event Registration Edit From</div>
+        <div className='font-bold text-teal-300 text-center text-4xl'>Event Registration Edit From</div>
 
         <button className=' absolute right-14 top-0 font-bold text-2xl hover:font-extrabold hover:text-3xl' onClick={()=>updateSelectedRegistration(null)}>X</button>
 
-        <div className='border p-4 border-spacing-0 space-y-2'> 
+        <div className='border p-4 border-spacing-0 space-y-2 '> 
             <div className='flex justify-center items-center text-xl font-semibold'>Event Info</div>
             <div> 
-                <label className="block text-sm font-semibold text-gray-700">Event ID</label>
+                <label className="block text-white text-l font-semibold">Event ID</label>
                 <input
                     type="number"
                     name="event_id"
                     value={form.event_id}
                     onChange={handleEventIdChange}
                     required
-                    className="mt-1 block w-full p-2 border border-gray-300 rounded-md" />
+                    className="mt-1 block w-full p-2 border text-black  border-gray-300 rounded-md" />
             </div>
 
             <div>
-                <label className="block text-sm font-semibold text-gray-700">Event Name (readOnly)</label>
+                <label className="block text-l font-semibold text-white">Event Name (readOnly)</label>
                 <input
                     type="text"
                     name="event_name"
                     value={event.event_name}
                     readOnly
-                    className="mt-1 block w-full p-2 border border-gray-300 rounded-md" />
+                    className="mt-1 block w-full p-2 border text-black border-gray-300 rounded-md" />
             </div>
 
             {event.event_date !=='' && (
                 <div>
-                    <label className="block text-sm font-semibold text-gray-700">Event Date (readOnly)</label>
+                    <label className="block text-l font-semibold text-white">Event Date (readOnly)</label>
                     <input
                         type="datetime-local"
                         name="event_date"
                         value={formatDateTimeLocal(event.event_date.toDate())}
                         readOnly
-                        className="mt-1 block w-full p-2 border  border-gray-300 rounded-md" />
+                        className="mt-1 block w-full p-2 border text-black border-gray-300 rounded-md" />
                 </div>
             )}
             {event.event_date =='' && (
                 <div>
-                    <label className="block text-sm font-semibold text-gray-700">Event Date (readOnly)</label>
+                    <label className="block text-l font-semibold text-white">Event Date (readOnly)</label>
                     <input                        
                         name="event_date"
                         value={"N/A"}
                         readOnly
-                        className="mt-1 block w-full p-2 border  border-gray-300 rounded-md" />
+                        className="mt-1 block w-full p-2 border text-black border-gray-300 rounded-md" />
                 </div>
             )}
 
@@ -200,34 +200,34 @@ const EditRegistrationForm = ({updateSelectedRegistration, registration}) => {
         <div className='border p-4 border-spacing-0 space-y-2'>
             <div className='flex justify-center items-center text-xl font-semibold'>User Info</div>
             <div>
-                <label className="block text-sm font-semibold text-gray-700">User ID</label>
+                <label className="block text-l font-semibold text-white">User ID</label>
                 <input
                     type="number"
                     name="user_id"
                     value={form.user_id}
                     onChange={handleUserIdChange}
                     required
-                    className="mt-1 block w-full p-2 border border-gray-300 rounded-md" />
+                    className="mt-1 block w-full p-2 border text-black border-gray-300 rounded-md" />
             </div>
 
             <div>
-                <label className="block text-sm font-semibold text-gray-700">User First Name (readOnly)</label>
+                <label className="block text-l font-semibold text-white">User First Name (readOnly)</label>
                 <input
                     type="text"
                     name="first_name"
                     value={user.first_name}
                     readOnly
-                    className="mt-1 block w-full p-2 border border-gray-300 rounded-md" />
+                    className="mt-1 block w-full p-2 border text-black border-gray-300 rounded-md" />
             </div>
 
             <div>
-                <label className="block text-sm font-semibold text-gray-700">User Last Name (readOnly)</label>
+                <label className="block text-l font-semibold text-white">User Last Name (readOnly)</label>
                 <input
                     type="text"
                     name="Last_name"
                     value={user.last_name}
                     readOnly
-                    className="mt-1 block w-full p-2 border border-gray-300 rounded-md" />
+                    className="mt-1 block w-full p-2 border text-black border-gray-300 rounded-md" />
             </div>
         </div>
 
