@@ -24,7 +24,6 @@ const FeedbackPage = () => {
       }));
       setFeedbackList(feedbackData);
 
-      // Calculate average rating correctly
       const total = feedbackData.length;
       if (total > 0) {
         const sumOfRatings = feedbackData.reduce((sum, feedback) => sum + Number(feedback.rating), 0);
@@ -43,12 +42,28 @@ const FeedbackPage = () => {
     try {
       await addDoc(collection(db, 'feedback'), {
         user_id: null,
-        rating: Number(rating), // Ensure rating is a number
+        rating: Number(rating),
         comments,
         isAnonymous,
         submittedAt: new Date()
       });
       alert('Feedback submitted!');
+
+      // Refetch the feedback list after successful submission
+      const feedbackCollection = collection(db, 'feedback');
+      const feedbackQuery = query(feedbackCollection, orderBy('submittedAt', 'desc'));
+      const querySnapshot = await getDocs(feedbackQuery);
+
+      const feedbackData = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      setFeedbackList(feedbackData);
+
+      // Reset form fields
+      setRating(1);
+      setComments('');
+      setIsAnonymous(false);
     } catch (error) {
       console.error('Error submitting feedback: ', error);
       alert('Failed to submit feedback.');
@@ -70,10 +85,10 @@ const FeedbackPage = () => {
   };
 
   return (
-    <div style={{ backgroundColor: 'black', color: 'white', padding: '20px', minHeight: '100vh' }}>
-      <h2>Feedback Management</h2>
-      <form onSubmit={submitFeedback} style={{ marginBottom: '20px' }}>
-        <label style={{ display: 'block', marginBottom: '10px' }}>
+    <div className="dark-section" style={{ padding: '20px', minHeight: '100vh' }}>
+      <h2 className="h1">Feedback Management</h2>
+      <form onSubmit={submitFeedback} className="form-container">
+        <label>
           Rating:
           <input 
             type="number" 
@@ -82,28 +97,28 @@ const FeedbackPage = () => {
             value={rating} 
             onChange={(e) => setRating(e.target.value)} 
             required 
-            style={{ marginLeft: '10px', color:'black' }}
+            className="input-field"
           />
         </label>
-        <label style={{ display: 'block', marginBottom: '10px' }}>
+        <label>
           Comments:
           <textarea 
             value={comments} 
             onChange={(e) => setComments(e.target.value)} 
             required 
-            style={{ marginLeft: '10px', width: '100%', height: '80px' }}
+            className="textbox"
           />
         </label>
-        <label style={{ display: 'block', marginBottom: '10px' }}>
+        <label>
           Submit Anonymously:
           <input 
             type="checkbox" 
             checked={isAnonymous} 
             onChange={(e) => setIsAnonymous(e.target.checked)} 
-            style={{ marginLeft: '10px' }}
+            style={{ marginTop: '1rem' }}
           />
         </label>
-        <button type="submit" style={{ backgroundColor: 'orange', color: 'black', border: 'none', padding: '10px 20px', cursor: 'pointer' }}>
+        <button type="submit" className="btn">
           Submit Feedback
         </button>
       </form>
@@ -113,23 +128,25 @@ const FeedbackPage = () => {
       <p>Average Rating: {averageRating}</p>
 
       <h3>Feedback List</h3>
-      <ul style={{ listStyleType: 'none', padding: 0 }}>
+      <ul className="list">
         {feedbackList.map((feedback, index) => (
-          <li key={index} style={{ backgroundColor: '#333', padding: '10px', marginBottom: '10px', borderRadius: '5px' }}>
-            <p>Rating: {feedback.rating}</p>
-            <p>Comments: {feedback.comments}</p>
-            <p>Anonymous: {feedback.isAnonymous ? 'Yes' : 'No'}</p>
-            <p>Submitted At: {new Date(feedback.submittedAt.seconds * 1000).toLocaleString()}</p>
-            <p>Classification: {feedback.classification || 'Unclassified'}</p>
-            <p>Reviewed: {feedback.reviewed ? 'Yes' : 'No'}</p>
+          <li key={index} className="list__item">
+            <div className="list__stats">
+              <p>Rating: {feedback.rating}</p>
+              <p>Comments: {feedback.comments}</p>
+              <p>Anonymous: {feedback.isAnonymous ? 'Yes' : 'No'}</p>
+              <p>Submitted At: {new Date(feedback.submittedAt.seconds * 1000).toLocaleString()}</p>
+              <p>Classification: {feedback.classification || 'Unclassified'}</p>
+              <p>Reviewed: {feedback.reviewed ? 'Yes' : 'No'}</p>
+            </div>
             <div>
-              <button onClick={() => classifyFeedback(feedback.id, 'Positive')} style={{ backgroundColor: 'orange', color: 'black', border: 'none', marginRight: '5px', padding: '5px 10px', cursor: 'pointer' }}>
+              <button onClick={() => classifyFeedback(feedback.id, 'Positive')} className="btn tiny">
                 Mark as Positive
               </button>
-              <button onClick={() => classifyFeedback(feedback.id, 'Neutral')} style={{ backgroundColor: 'orange', color: 'black', border: 'none', marginRight: '5px', padding: '5px 10px', cursor: 'pointer' }}>
+              <button onClick={() => classifyFeedback(feedback.id, 'Neutral')} className="btn tiny">
                 Mark as Neutral
               </button>
-              <button onClick={() => classifyFeedback(feedback.id, 'Negative')} style={{ backgroundColor: 'orange', color: 'black', border: 'none', padding: '5px 10px', cursor: 'pointer' }}>
+              <button onClick={() => classifyFeedback(feedback.id, 'Negative')} className="btn tiny">
                 Mark as Negative
               </button>
             </div>
