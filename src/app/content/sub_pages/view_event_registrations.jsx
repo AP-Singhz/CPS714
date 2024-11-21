@@ -95,7 +95,7 @@ const ViewEventRegistration = ({updateSelectedRegistration, eventToView }) => {
     return (
         <div className="overflow-auto">
 
-            <div className='p-4 flex justify-center space-x-6'>
+            <div className='p-4 flex justify-center space-x-6 text-white'>
                 <div className='text-xl p-2' >
                     <strong>Event Id :</strong> {eventToView.event_id}
                 </div>
@@ -107,8 +107,8 @@ const ViewEventRegistration = ({updateSelectedRegistration, eventToView }) => {
                 </div>
             </div>
 
-            <table className="min-w-full bg-white border">
-                <thead>
+            <table className="min-w-full bg-gray-700 text-white border">
+                <thead className='bg-gray-800'> 
                     <tr>
                         <th className="py-2 px-4 border text-center">Registration ID</th>
                         <th className="py-2 px-4 border text-center">User ID</th>
@@ -119,7 +119,7 @@ const ViewEventRegistration = ({updateSelectedRegistration, eventToView }) => {
                 </thead>
                 <tbody>
                     {registrations.map(registration => (
-                        <tr className = "hover:border-slate-300 hover:border-2 hover:shadow hover:bg-violet-100 hover:font-semibold" key={registration.id}>
+                        <tr className = "hover:border-slate-300 hover:text-black hover:border-2 hover:shadow hover:bg-violet-100 hover:font-semibold" key={registration.id}>
                             <td className="py-2 px-4 border text-center w-1/12">{registration.registration_id}</td>
                             <td className="py-2 px-4 border text-center w-1/12">{registration.user_id}</td>
                             <td className="py-2 px-4 border text-center w-1/12">{registration.user_name}</td>

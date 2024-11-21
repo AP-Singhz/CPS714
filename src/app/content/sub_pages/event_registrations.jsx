@@ -96,12 +96,12 @@ const EventRegistrationManagmentTable = ({updateAddRegistration, updateSelectedR
 
             <div className='p-2 flex justify-end'>
                 <button className="text-white shadow-2xl w-16 h-16 rounded-full bg-[#4fdb51] hover:bg-[#3eb040] flex justify-center items-center" onClick={ () => updateAddRegistration("Yes") } >
-                    <FiPlusSquare size={30} />
+                    <FiPlusSquare size={36} />
                 </button>
             </div>
 
-            <table className="min-w-full bg-white border">
-                <thead>
+            <table className="min-w-full bg-gray-700 text-white border-gray-700">
+                <thead className=" bg-gray-800 h-16 text-white">
                     <tr>
                         <th className="py-2 px-4 border text-center">Registration ID</th>
                         <th className="py-2 px-4 border">Event ID</th>
@@ -115,7 +115,7 @@ const EventRegistrationManagmentTable = ({updateAddRegistration, updateSelectedR
                 </thead>
                 <tbody>
                     {registrations.map(registration => (
-                        <tr className = "hover:border-slate-300 hover:border-2 hover:shadow hover:bg-violet-100 hover:font-semibold" key={registration.id}>
+                        <tr className = "hover:border-slate-300 hover:text-black hover:border-2 hover:shadow hover:bg-violet-100 hover:font-semibold" key={registration.id}>
                             <td className="py-2 px-4 border text-center w-1/12">{registration.registration_id}</td>
                             <td className="py-2 px-4 border text-center w-1/12">{registration.event_id}</td>
                             <td className="py-2 px-4 border text-center w-2/12">{registration.event_name}</td>
