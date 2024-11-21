@@ -82,7 +82,7 @@ const FeedbackPage = () => {
             value={rating} 
             onChange={(e) => setRating(e.target.value)} 
             required 
-            style={{ marginLeft: '10px' }}
+            style={{ marginLeft: '10px', color:'black' }}
           />
         </label>
         <label style={{ display: 'block', marginBottom: '10px' }}>

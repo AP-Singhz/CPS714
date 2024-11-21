@@ -1,8 +1,31 @@
 //aka the App: the renderer
+'use client'
+import React, {useEffect} from 'react';
 import Link from 'next/link';
 
 
 const Home = () => {
+  useEffect(() => { 
+    const reloadPage = () => {
+      if (typeof window !== 'undefined') { 
+        console.log('window defined');
+        const hasVisited = localStorage.getItem('hasVisited'); 
+        console.log('hasVisited: '+ hasVisited)
+        if (hasVisited ==='false') { 
+          console.log('reloading window')
+          localStorage.setItem('hasVisited', 'true'); 
+          window.location.reload(); 
+        } 
+      } 
+    }
+    reloadPage();
+  }, []);
+  
+  const setVisitedFalse = () =>{
+    localStorage.setItem('hasVisited', 'false'); 
+  }
+
+   // Refresh the page to fetch updated rewards
   return (
     <section>
       <h1>
@@ -12,14 +35,14 @@ const Home = () => {
         Click on the items below begin managing!
       </h2>
       <section className="card"> 
-      <ul className="card__list">
+      <ul className="card__list" >
         <Link href="/user" passHref className="card__element">
           <h3>
             Manage & Edit User Profiles
           </h3>
           Create or delete accounts, view and edit user profiles, and reset passwords.
         </Link>
-        <Link href="/content" passHref className="card__element">
+        <Link href="/content" passHref className="card__element" onClick={setVisitedFalse}>
           <h3>
             Manage Content
           </h3>

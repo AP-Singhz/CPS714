@@ -101,7 +101,7 @@ const EventRegistrationManagmentTable = ({updateAddRegistration, updateSelectedR
             </div>
 
             <table className="min-w-full bg-gray-700 text-white border-gray-700">
-                <thead className=" bg-gray-800 h-16 text-white">
+                <thead className=" bg-gray-800 h-16 text-white">r
                     <tr>
                         <th className="py-2 px-4 border text-center">Registration ID</th>
                         <th className="py-2 px-4 border">Event ID</th>
