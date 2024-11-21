@@ -2,6 +2,8 @@
 import { useEffect, useState, FormEvent } from "react";
 import { collection, getDocs, addDoc, deleteDoc, doc, updateDoc, query, orderBy, limit } from "firebase/firestore";
 import { db } from "../firebase/clientApp.ts";
+import Link from 'next/link';
+
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -146,6 +148,11 @@ const Users = () => {
   return (
     <div style={{ backgroundColor: 'black', color: 'white', padding: '10px', minHeight: '100vh' }}>
       <h1 className="text-4xl font-bold text-clr-light mb-4">User Management</h1>
+      <div>
+        <Link href="../" passHref>
+          <button className="backbutton hover:text-sky-700">BACK TO ADMIN DASHBOARD</button>
+        </Link>
+      </div>
       <div className="card-container">
         <ul className="card__list">
           {users.map((user) => (
