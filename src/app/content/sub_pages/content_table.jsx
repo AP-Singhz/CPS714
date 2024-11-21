@@ -62,9 +62,9 @@ const ContentTable = ({updateSelected, collapsed}) => {
     };
 
     return (
-        <div className="overflow-auto">
-            <table className="min-w-full bg-white border">
-                <thead>
+        <div className="pt-2 text-white overflow-auto">
+            <table className="min-w-full bg-gray-700 border">
+                <thead className='bg-gray-800'>
                     <tr>
                     <th className="py-2 px-4 border text-center">Content ID</th>
                     <th className="py-2 px-4 border">Title</th>
@@ -79,7 +79,7 @@ const ContentTable = ({updateSelected, collapsed}) => {
                 {collapsed === "No" && (
                     <tbody>
                         {contents.map(item => (
-                        <tr className = "hover:border-slate-300 hover:border-2 hover:shadow hover:bg-green-100 hover:font-semibold" key={item.id}>
+                        <tr className = "hover:border-slate-300 hover:text-black hover:border-2 hover:shadow hover:bg-green-100 hover:font-semibold" key={item.id}>
                             <td className="py-2 px-4 border text-center w-1/12">{item.content_id}</td>
                             <td className="py-2 px-4 border text-center w-1/12">{item.title}</td>
                             <td className="py-2 px-4 border text-center w-1/12">{item.content_type}</td>

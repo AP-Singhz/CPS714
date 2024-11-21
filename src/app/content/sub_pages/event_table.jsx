@@ -85,9 +85,9 @@ const EventTable = ({updateSelected, setViewEventRegistration, collapsed}) => {
     };
 
   return (
-    <div className="overflow-auto">
-      <table className="min-w-full bg-white border">
-        <thead>
+    <div className="pt-2 overflow-auto text-white">
+      <table className="min-w-full bg-gray-700 border">
+        <thead className='bg-gray-800'>
           <tr>
             <th className="py-2 px-4 border text-center">Event ID</th>
             <th className="py-2 px-4 border">Event Name</th>
@@ -102,7 +102,7 @@ const EventTable = ({updateSelected, setViewEventRegistration, collapsed}) => {
         {collapsed === "No" && (
             <tbody>
                 {events.map(event => (
-                    <tr className = "hover:border-slate-300 hover:border-2 hover:shadow hover:bg-violet-100 hover:font-semibold" key={event.id}>
+                    <tr className = "hover:border-slate-300 hover:text-black hover:border-2 hover:shadow hover:bg-violet-100 hover:font-semibold" key={event.id}>
                         <td className="py-2 px-4 border text-center w-1/12">{event.event_id}</td>
                         <td className="py-2 px-4 border w-1/12">{event.event_name}</td>
                         <td className="py-2 px-4 border overflow-hidden w-4/12">{event.description}</td>

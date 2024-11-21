@@ -76,13 +76,13 @@ export default function ContentEventsManagement() {
 
   return (
     
-    <div className="min-h-screen bg-gray-100 rounded-lg ">
+    <div className="min-h-screen bg-gray-900 rounded-lg ">
       
       <div>
-        <h2 className="text-3xl py-5 font-bold text-slate-500 ml-1 mb-1">Content and Events Management</h2>
+        <h2 className="text-3xl py-5 px-6 font-bold text-slate-200 ml-1 mb-1">Content and Events Management</h2>
       </div>
 
-      <header className="bg-gray-800 h-44 text-white py-4 pl-4">
+      <header className="bg-gray-600 h-44 text-white py-4 pl-4">
         <div className="ml-10 h-15 text-slate-900 bg-slate-400 font-bold p-2 mb-2">
         <Link href="../" passHref>
           <button className="backbutton hover:text-sky-700">BACK TO ADMIN DASHBOARD</button>
@@ -130,10 +130,10 @@ export default function ContentEventsManagement() {
           <section className="mb-20">
             <div className="flex justify-between items-center">
 
-              <h3 className="text-2xl text-[#19814a] font-bold">Contents</h3>
+              <h3 className="text-2xl text-[#26b96a] font-bold">Contents</h3>
 
               <div className="flex items-center space-x-16" >
-                <FiPlusSquare size={70} className='hover:text-lime-700' onClick={add_content_tile}/>
+                <FiPlusSquare size={70} className=' text-lime-200 hover:text-lime-700' onClick={add_content_tile}/>
                 {contentTileCollapsed === "No" && (
                   <div>
                     <button onClick={()=> setContentTileCollapsed("Yes")} className="text-2xl italic font-semibold text-blue-500">Collapse</button>
@@ -177,13 +177,13 @@ export default function ContentEventsManagement() {
 
             <div className="flex justify-between items-center">
 
-              <h3 className="text-2xl text-[#4b1e8a] font-bold">Events</h3>
+              <h3 className="text-2xl text-[#7832da] font-bold">Events</h3>
 
               <div className="flex items-center space-x-16" >
 
                 <div className='text-xl font-semibold bg-orange-400 m-2 p-3 border-slate-500 rounded-xl hover:bg-orange-600'><button onClick={() => setManagingRegistrations("Yes")}>Manage Event Registrations</button></div>
 
-                <FiPlusSquare size={70} className='hover:text-violet-700' onClick={add_event_tile}/>
+                <FiPlusSquare size={70} className='text-violet-400 hover:text-violet-700' onClick={add_event_tile}/>
 
                 {eventTileCollapsed === "No" && (
                   <div>
@@ -230,9 +230,9 @@ export default function ContentEventsManagement() {
             {/* Content Section */}
             <section className="mb-20">
               <div className="flex justify-between items-center">              
-                  <h3 className="text-2xl text-[#19814a] font-bold">Contents</h3>
+                  <h3 className="text-2xl text-[#28c16f] font-bold">Contents</h3>
                   <div className="flex items-center space-x-16" >
-                    <FiPlusSquare size={70} className='hover:text-lime-700' onClick={add_content_table}/>
+                    <FiPlusSquare size={70} className='text-lime-400 hover:text-lime-700' onClick={add_content_table}/>
                     {contentTableCollapsed === "No" && (
                       <div>
                         <button onClick={()=> setContentTableCollapsed("Yes")} className="text-2xl italic font-semibold text-blue-500">Collapse</button>
@@ -262,10 +262,10 @@ export default function ContentEventsManagement() {
             {/* Events Section */}
             <section className="mb-10">
               <div className="flex justify-between items-center">
-                <h3 className="text-2xl text-[#4b1e8a] font-bold">Events</h3>
+                <h3 className="text-2xl text-[#8346da] font-bold">Events</h3>
                 <div className="flex items-center space-x-16" >
                 <div className='text-xl font-semibold bg-orange-400 m-2 p-3 border-slate-500 rounded-xl hover:bg-orange-600'><button onClick={() => setManagingRegistrations("Yes")}>Manage Event Registrations</button></div>
-                  <FiPlusSquare size={70} className='hover:text-violet-700' onClick={add_event_table}/>
+                  <FiPlusSquare size={70} className='text-violet-400 hover:text-violet-700' onClick={add_event_table}/>
                   {eventTableCollapsed === "No" && (
                       <div>
                         <button onClick={()=> setEventTableCollapsed("Yes")} className="text-2xl italic font-semibold text-blue-500">Collapse</button>
@@ -351,7 +351,7 @@ export default function ContentEventsManagement() {
 
               <div className="flex justify-between items-center">
 
-                <h3 className="text-2xl text-[#4b1e8a] font-bold">Event Registration Mangement</h3>
+                <h3 className="text-2xl text-[#575eea] font-bold">Event Registration Mangement</h3>
 
                 <div className="flex items-center space-x-16" >
                   <div className='text-xl font-semibold bg-orange-400 m-2 p-3 border-slate-500 rounded-xl hover:bg-orange-600'><button onClick={() => setManagingRegistrations("No")}>Return to Content and Event Management</button></div>
@@ -367,7 +367,7 @@ export default function ContentEventsManagement() {
 
         {
           addRegistration === "Yes" && (
-            <div className=' absolute bg-slate-300  max-h-max inset-56 inset-y-4 flex items-center justify-center'>
+            <div className=' absolute bg-slate-600  max-h-max inset-56 inset-y-4 flex items-center justify-center'>
               <CreateRegistrationForm updateState={setAddRegistration} u/>
             </div>
           )
@@ -376,7 +376,7 @@ export default function ContentEventsManagement() {
       <div>
           {selectedRegistration !== null && (
             
-            <div className=' absolute bg-slate-300  max-h-max inset-56 inset-y-4 flex items-center justify-center'>
+            <div className=' absolute bg-slate-600 text-white  max-h-max inset-56 inset-y-4 flex items-center justify-center'>
               <EditRegistrationForm updateSelectedRegistration={setSelectedRegistration} registration={selectedRegistration} />
             </div>
           )}
@@ -390,7 +390,7 @@ export default function ContentEventsManagement() {
 
             <div className="flex justify-between items-center">
 
-              <h3 className="text-2xl text-[#4b1e8a] font-bold">View Single Event Registrations </h3>
+              <h3 className="text-2xl text-[#c43da7] font-bold">View Single Event Registrations </h3>
 
               <div className="flex items-center space-x-16" >
                 <div className='text-xl font-semibold bg-orange-400 m-2 p-3 border-slate-500 rounded-xl hover:bg-orange-600'><button onClick={() => handleExitFromViewEventRegistrations()}>Return to Content and Event Management</button></div>
