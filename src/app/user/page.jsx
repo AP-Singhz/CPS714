@@ -144,7 +144,7 @@ const Users = () => {
   };
 
   return (
-    <div className="dark-section min-h-screen flex flex-col items-center justify-center p-6">
+    <div style={{ backgroundColor: 'black', color: 'white', padding: '10px', minHeight: '100vh' }}>
       <h1 className="text-4xl font-bold text-clr-light mb-4">User Management</h1>
       <div className="card-container">
         <ul className="card__list">
@@ -156,7 +156,7 @@ const Users = () => {
               <p className="text-clr-light">First Name: {user.first_name}</p>
               <p className="text-clr-light">Last Name: {user.last_name}</p>
               <p className="text-clr-light">Preferences: {user.preferences}</p>
-              <div className="flex gap-4">
+              <div style={{alignContent: "center"}}>
                 <button
                   className="edit-btn"
                   onClick={() => handleEditUser(user)}
@@ -179,6 +179,7 @@ const Users = () => {
       ) : (
         <form
           className="form-container bg-clr-darkneon rounded-lg shadow-lg p-6 flex flex-col gap-4 items-center"
+          style={{alignItems: "center"}}
           onSubmit={editingUser ? handleUpdateUser : handleAddUser}
         >
           <input
