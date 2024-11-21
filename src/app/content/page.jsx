@@ -375,7 +375,6 @@ export default function ContentEventsManagement() {
       
       <div>
           {selectedRegistration !== null && (
-            
             <div className=' absolute bg-slate-600 text-white  max-h-max inset-56 inset-y-4 flex items-center justify-center'>
               <EditRegistrationForm updateSelectedRegistration={setSelectedRegistration} registration={selectedRegistration} />
             </div>
