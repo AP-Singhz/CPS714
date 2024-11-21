@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* styles/Home.module.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --clr-light: #f6f3ef; 
+  --clr-cream: #ede7de; /*amber100*/
+  --clr-dark: #025a4e; 
+  --clr-skin: #fdba74; /*orange300*/
+  --clr-green: #025a4e; /*green600*/   
+  --clr-neon: #86dfc1;
+  --clr-darkneon: #14b8a6;
+      /* sizes. next time use values from tailwind css */
+  --size-xs: 0.5rem;
+  --size-s: 0.75rem;
+  --size-m: 1rem ;
+  --size-m2: 1.25rem;
+  --size-l: 1.5rem;
+  --size-l2: 1.75rem;
+  --size-xl: 2rem;
+  --size-2xl: 3rem;
+  --size-3xl: 5rem ;
+  --size-4xl: 7rem;
+}
+
+.container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+  }
+  
+  .backButton {
+    background: none;
+    border: none;
+    color: #4b4a4a;
+    cursor: pointer;
+  }
+  
+  .title {
+    font-size: 24px;
+    color: #4CAF50;
+  }
+  
+  .viewOptions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .viewButton {
+    background: none;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .logoutButton {
+    background: none;
+    border: none;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .main {
+    padding: 20px;
+  }
+  
+  .searchBar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  
+  .searchBar input {
+    padding: 5px;
+    width: 200px;
+  }
+  
+  .section {
+    margin-bottom: 40px;
+  }
+  
+  .section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .contentItem, .eventItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .contentDetails, .eventDetails {
+    display: flex;
+    align-items: center;
+  }
+  
+  .editButton, .deleteButton, .viewButton {
+    background: none;
+    border: none;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  .newBadge {
+    background-color: #2196F3;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-left: 5px;
+  }
+  
+  .addButton {
+    background: none;
+    border: 2px solid #000;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+  }
+  
+  .seeAll {
+    display: block;
+    margin-top: 10px;
+    text-align: right;
+    color: #4CAF50;
+    text-decoration: none;
+  }
+  
+  .seeAll:hover {
+    text-decoration: underline;
+  }
+
+.section {
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+    
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 3rem;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+  
