@@ -155,7 +155,7 @@ const Users = () => {
           <button className="backbutton hover:text-sky-700">BACK TO ADMIN DASHBOARD</button>
         </Link>
       </div>
-      <div className="card-container">
+      <div className="">
         <ul className="card__list">
           {users.map((user) => (
             <li key={user.id} className="card__element dark-card flex flex-col items-center justify-between">

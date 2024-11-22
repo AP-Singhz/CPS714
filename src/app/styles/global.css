@@ -6,12 +6,15 @@
     --clr-green: #025a4e; /* Dark green */
     --clr-neon: #86dfc1; /* Neon teal */
     --clr-darkneon: #0f766e; /* Muted teal */
+    /*background: no-repeat center/100% url("../../../utils/photo.jpg");*/
+    background-color: #fff4d2;
   }
   
   html {
     scroll-behavior: smooth;
     font-family: "Inter", sans-serif;
   }
+
   
   .dark-section {
     background-color: var(--clr-dark);
@@ -130,12 +133,18 @@
     margin: 0rem;
   }
 
+  .list__desc {
+    min-width: 30rem;
+    max-width: 60rem;
+  }
+
   .tiny{
     margin: 0.3em;
   }
   .textbox {
     min-height: 5rem;
     min-width: 30rem;
+    max-width: 60rem;
     border-radius: 4px;
     box-sizing: border-box;
 

@@ -2,8 +2,6 @@
 'use client'
 import React, {useEffect} from 'react';
 import Link from 'next/link';
-
-
 const Home = () => {
   useEffect(() => { 
     const reloadPage = () => {
@@ -27,7 +25,8 @@ const Home = () => {
 
    // Refresh the page to fetch updated rewards
   return (
-    <section>
+    <section className='center'>
+     
       <h1>
         Welcome back to the Dashboard
       </h1> 
