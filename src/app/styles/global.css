@@ -97,4 +97,51 @@
   }
   
 
-  
+  .list {
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+  }
+
+  .list__item{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--clr-cream);
+    color: var(--clr-light);
+    padding: 1rem;
+    margin: 1.5rem;
+    padding:3rem;
+    border-radius: 12px;
+  }
+
+  .element{
+    margin-bottom: 1rem
+  }
+
+  .list__stats {
+    display: flex;
+    flex-direction: column;
+    margin: 0rem;
+  }
+
+  .tiny{
+    margin: 0.3em;
+  }
+  .textbox {
+    min-height: 5rem;
+    min-width: 30rem;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+  }
