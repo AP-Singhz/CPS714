@@ -1,5 +1,13 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+Make sure to Download the necessary dependencies and modules using npm/npx install:
+- React-icons
+- Tailwinds
+- React
+- Next.js
+
+
+
 ## Getting Started
 
 First, run the development server:
